@@ -1,0 +1,5 @@
+cycle
+bike
+cng
+rickshaw
+car
