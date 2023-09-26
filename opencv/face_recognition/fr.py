@@ -7,7 +7,8 @@ import numpy as np # To handle all lists/arrays
 import cv2 # To capture webcam footage
 import os # To handle all matters relating to folders, paths, image/file names, etc.
 
-faces_path = "D:\\salman\\python\\opencv\\20\\image"
+#F:\innovation skills\project\fr\opencv\opencv\face_recognition
+faces_path = "F:\\innovation skills\\project\\fr\\opencv\\opencv\\face_recognition\\image"
 # print(os.listdir(faces_path))
 def get_face_encodings():
     face_names = os.listdir(faces_path)
@@ -21,10 +22,12 @@ def get_face_encodings():
 face_encodings, face_names = get_face_encodings()
 
 # Reference to webcam
+
 video = cv2.VideoCapture(0)
 
 while True:
     success, image = video.read()
+    print(image)
     resized_image = cv2.resize(image, (int(image.shape[1]/2), int(image.shape[0]/2)))
     # Converting current frame to RGB, since that's what the face recognition module uses
     rgb_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
